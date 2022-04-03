@@ -29,7 +29,6 @@ class Game2048 {
     this.createInitialGameState()
   }
 
-
   private gameContainer: HTMLElement;
   public gameState: TGameState;
   private chanceToHaveAFour = 0.25;
@@ -140,6 +139,10 @@ class Game2048 {
     this.gameState = this.gameState.map((xList) => this.resolveGameRow(xList, true))
   }
 
+  private moveLeft() {
+    this.gameState = this.gameState.map((xList) => this.resolveGameRow(xList))
+  }
+
   private getCellTransformPosition({ x, y }: TCellPosition) {
     return `translateX(calc(600px * ${x * 0.25})) translateY(calc(600px * ${y * 0.25}))`
   }
@@ -168,10 +171,6 @@ class Game2048 {
 
       if (!exists) node.remove()
     })
-  }
-
-  private moveLeft() {
-    this.gameState = this.gameState.map((xList) => this.resolveGameRow(xList))
   }
 
   private moveCellNodes() {
