@@ -4,8 +4,6 @@ function htmlToElement(html: string) {
   return template.content.firstChild;
 }
 
-console.log("HEEEE")
-
 type TGameCell = {
   id?: string;
   value: number
@@ -37,8 +35,6 @@ class Game2048 {
   private chanceToHaveAFour = 0.25;
 
   private createInitialGameState() {
-    console.log("Opa")
-    console.log("hehe")
     this.gameState = [
       [{ value: 0 }, { value: 0 }, { value: 0 }, { value: 0 }],
       [{ value: 0 }, { value: 0 }, { value: 0 }, { value: 0 }],
